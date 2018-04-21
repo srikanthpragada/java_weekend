@@ -1,3 +1,4 @@
+package bank;
 
 public class SavingsAccount  implements Comparable<SavingsAccount>{
 	// Instance variables

@@ -1,3 +1,4 @@
+package ex;
 
 public class SavingsAccount  implements Comparable<SavingsAccount>{
 	// Instance variables
@@ -43,10 +44,11 @@ public class SavingsAccount  implements Comparable<SavingsAccount>{
 		this.balance += amount;
 	}
 
-	public void withdraw(double amount) {
+	public void withdraw(double amount) throws InsufficientFundsException {
 		if (this.balance - minBalance >= amount)
 			this.balance -= amount;
-
+		else
+			throw new InsufficientFundsException("Insufficient Funds. Available funds :" + balance);
 	}
 
 	public double getBalance() {
